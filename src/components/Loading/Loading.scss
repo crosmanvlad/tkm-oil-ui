@@ -1,0 +1,58 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-loading {
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+
+	&-svg {
+		z-index: 999;
+		position: absolute;
+		top: calc(50% - 2.5rem);
+		left: calc(50% - 2.5rem);
+		width: 5rem;
+		height: 5rem;
+		transform: rotate(-90deg);
+	}
+
+	&-circle {
+		stroke-linecap: round;
+		animation: dash 1.5s ease-in-out infinite;
+
+		&.is-first {
+			stroke: color(GenericColors, TkmGreenText);
+			animation-delay: .1s;
+		}
+
+		&.is-second {
+			stroke: color(GenericColors, TkmGreenText);
+			animation-delay: .2s;
+		}
+
+		&.is-third {
+			stroke: color(GenericColors, TkmGreenText);
+			animation-delay: .3s;
+		}
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}

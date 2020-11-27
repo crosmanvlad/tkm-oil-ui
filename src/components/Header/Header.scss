@@ -1,0 +1,46 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-header {
+  background-color: color(GenericColors, TkmGreen);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo-container {
+    width: 300px;
+    margin: 17px 70px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .controls {
+    margin-right: 70px;
+    display: flex;
+
+    .logout, .menu {
+      padding-left: 5px;
+      fill: color(GenericColors, TkmGrey);
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    .logo-container {
+      width: 200px;
+      margin: 10px 30px;
+    }
+
+    .controls {
+      margin-right: 30px;
+
+      .mobile {
+        display: block;
+      }
+    }
+  }
+}

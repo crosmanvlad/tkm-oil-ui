@@ -1,0 +1,93 @@
+{
+  "name": "tkm-oil-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --mode development --port 8081",
+    "build": "webpack --mode production",
+    "test": "jest --silent --coverage",
+    "format": "prettier . --ext .js,.jsx,.ts,.tsx --write",
+    "lint": "eslint . --ext .js,.jsx --fix",
+    "storybook": "start-storybook --no-dll -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/runtime": "^7.12.5",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.15",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@types/webpack": "^4.41.24",
+    "@types/webpack-dev-server": "^3.11.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^5.0.1",
+    "dotenv-webpack": "^6.0.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript-prettier": "^3.1.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
+    "mini-css-extract-plugin": "^1.2.1",
+    "node-sass": "^5.0.0",
+    "path": "^0.12.7",
+    "prettier": "^2.1.2",
+    "sass-loader": "^10.0.5",
+    "sass-resources-loader": "^2.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "@material-ui/core": "^4.11.1",
+    "axios": "^0.21.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/__test__/setupTests.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/**/*.{ts,tsx}",
+      "!src/index.tsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  }
+}

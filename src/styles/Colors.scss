@@ -1,0 +1,15 @@
+$colors: (
+  GenericColors: (
+    TkmBlack: #000000,
+    TkmGrey: #444444,
+    TkmGreenText: #486350,
+    TkmGreen: #64a338,
+    TkmWhite: #ffffff,
+    TkmLime: #58b32b,
+    TkmDarkGreen: #0d6526
+  ),
+);
+
+@function color($tone, $color) {
+  @return map-get(map-get($colors, $tone), $color);
+}
