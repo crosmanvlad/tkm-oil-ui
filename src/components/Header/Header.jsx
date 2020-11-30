@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { MdPerson, MdMenu } from 'react-icons/md';
+import PropTypes from 'prop-types';
+import { MdPerson, MdMenu, MdClose } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import { TOKEN, USERNAME, ROLE } from '../../utils/constants';
 import { getCookie, removeCookie } from '../../utils/cookie-handler';
 import UserContext from '../../context/UserContext';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ toggleMenu, showMenu }) => {
   const [isLogged, setIsLogged] = useState(false);
   const history = useHistory();
   const user = useContext(UserContext);
@@ -16,6 +17,7 @@ const Header = () => {
     removeCookie(USERNAME);
     removeCookie(ROLE);
     setIsLogged(false);
+    user.updateUserContext('', '', '');
     history.push('/login');
   };
 
@@ -33,11 +35,24 @@ const Header = () => {
       {isLogged && (
         <div className="controls">
           <MdPerson className="logout" size={26} onClick={logout} />
-          <MdMenu className="menu mobile" size={28} />
+          {showMenu ? (
+            <MdClose onClick={toggleMenu} className="menu mobile" size={26} />
+          ) : (
+            <MdMenu className="menu mobile" onClick={toggleMenu} size={28} />
+          )}
         </div>
       )}
     </div>
   );
+};
+
+Header.propTypes = {
+  toggleMenu: PropTypes.func.isRequired,
+  showMenu: PropTypes.bool
+};
+
+Header.defaultProps = {
+  showMenu: false
 };
 
 export default Header;

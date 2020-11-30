@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100px;
 
   .logo-container {
     width: 300px;
@@ -30,6 +31,8 @@
   }
 
   @media (max-width: $bp-mobile) {
+    height: 70px;
+    
     .logo-container {
       width: 200px;
       margin: 10px 30px;

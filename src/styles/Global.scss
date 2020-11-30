@@ -1,5 +1,14 @@
 body {
   margin: 0;
+  font-family: Merriweather, Arial, Tahoma, sans-serif;
 }
 
-$bp-mobile: 480px;
+.content {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 100px);
+
+  @media (max-width: $bp-mobile) {
+    height: calc(100vh - 70px);
+  }
+}
