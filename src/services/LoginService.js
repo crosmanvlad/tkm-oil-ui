@@ -4,7 +4,7 @@ const URL_REQUEST = `${process.env.BASE_URL}${process.env.LOGIN_ENDPOINT}`;
 
 const login = (email, password) => {
   return axios
-    .post('http://localhost:3088/api/login', {
+    .post(URL_REQUEST, {
       email,
       password
     })

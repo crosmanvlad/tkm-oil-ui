@@ -32,6 +32,9 @@ const Menu = ({ toggleMenu, showMenu }) => {
           <Link onClick={toggleMenu} to="/my-collections">
             Colectarile mele
           </Link>
+          <Link onClick={toggleMenu} to="/new-collection">
+            Adauga Colectare
+          </Link>
         </div>
       )}
     </>

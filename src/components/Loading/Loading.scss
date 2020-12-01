@@ -9,35 +9,37 @@
   top: 0;
   z-index: 99999;
 
-	&-svg {
-		z-index: 999;
-		position: absolute;
-		top: calc(50% - 2.5rem);
-		left: calc(50% - 2.5rem);
-		width: 5rem;
-		height: 5rem;
-		transform: rotate(-90deg);
-	}
-
-	&-circle {
-		stroke-linecap: round;
-		animation: dash 1.5s ease-in-out infinite;
-
-		&.is-first {
-			stroke: color(GenericColors, TkmGreenText);
-			animation-delay: .1s;
-		}
-
-		&.is-second {
-			stroke: color(GenericColors, TkmGreenText);
-			animation-delay: .2s;
-		}
-
-		&.is-third {
-			stroke: color(GenericColors, TkmGreenText);
-			animation-delay: .3s;
-		}
-	}
+  .loading {
+    &-svg {
+      z-index: 999;
+      position: absolute;
+      top: calc(50% - 2.5rem);
+      left: calc(50% - 2.5rem);
+      width: 5rem;
+      height: 5rem;
+      transform: rotate(-90deg);
+    }
+  
+    &-circle {
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+  
+      &.is-first {
+        stroke: color(GenericColors, TkmGreenText);
+        animation-delay: .1s;
+      }
+  
+      &.is-second {
+        stroke: color(GenericColors, TkmGreenText);
+        animation-delay: .2s;
+      }
+  
+      &.is-third {
+        stroke: color(GenericColors, TkmGreenText);
+        animation-delay: .3s;
+      }
+    }
+  }
 }
 
 @keyframes dash {

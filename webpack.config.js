@@ -1,17 +1,16 @@
-const env = process.env.NODE_ENV;
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const env = process.env.NODE_ENV;
+
 const getEnvType = () => {
   switch (env) {
     case 'development':
-      return 'env.dev';
-      break;
+      return 'env.development';
     case 'production':
-      return 'env.myhyundai_dev_aperto_systems';
-      break;
+      return 'env';
     default:
       return 'env';
   }
