@@ -160,8 +160,9 @@ const Overview = () => {
       setCollectionToEdit({});
       setShowLoadMore(false);
       setCollections((prev) => {
-        prev.splice(deleteSelected, 1);
-        return prev;
+        const newValues = [...prev];
+        newValues.splice(deleteSelected, 1);
+        return newValues;
       });
     }
   };
