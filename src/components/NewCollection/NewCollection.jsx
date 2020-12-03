@@ -126,7 +126,7 @@ const NewCollection = () => {
             className="location input"
             id="outline-location"
             variant="outlined"
-            label="Locatie *"
+            label="Denumire Locatie *"
             type="text"
             value={location}
             onChange={handleChangeLocation}

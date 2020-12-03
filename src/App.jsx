@@ -20,7 +20,7 @@ const App = () => {
       setIsLogged(false);
       setShowMenu(false);
     }
-  }, [user]);
+  }, [user, getCookie(TOKEN)]);
 
   const toggleMenu = () => {
     setShowMenu((prevState) => !prevState);

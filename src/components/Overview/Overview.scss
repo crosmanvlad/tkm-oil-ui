@@ -1,0 +1,103 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-overview {
+  width: 100%;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color: color(GenericColors, TkmGrey)
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 40px;
+    margin-bottom: 10px;
+
+    .filter {
+      margin: 0 7px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+
+      .button {
+        height: 90%;
+      }
+    }
+
+    .hidden {
+      width: 0;
+    }
+  }
+
+  .table-container {
+    width: 90%;
+    margin: 0 40px;
+    max-height: 450px;
+
+    .table-head {
+      th {
+        background-color: color(GenericColors, TkmGreen);
+      }
+    }
+
+    .table-body {
+      tr:nth-of-type(odd) {
+        background-color: color(GenericColors, TkmLightGrey);
+      }
+
+      .edit-mode {
+        td {
+          border-top: 2px solid color(GenericColors, TkmGreen);
+          border-bottom: 2px solid color(GenericColors, TkmGreen);
+
+          &:first-child {
+            border-left: 2px solid color(GenericColors, TkmGreen);
+          }
+
+          &:last-child {
+            border-right: 2px solid color(GenericColors, TkmGreen);
+          }
+        }
+      }
+
+      .delete-mode {
+        td {
+          border-top: 2px solid color(GenericColors, TkmRed);
+          border-bottom: 2px solid color(GenericColors, TkmRed);
+        
+          &:first-child {
+            border-left: 2px solid color(GenericColors, TkmRed);
+          }
+  
+          &:last-child {
+            border-right: 2px solid color(GenericColors, TkmRed);
+          }
+        }
+      }
+
+      .load-more-row {
+        .help-cell {
+          background-color: color(GenericColors, TkmWhite);
+        }
+
+        .load-more-cell {
+          display: flex;
+          justify-content: center;
+          background-color: color(GenericColors, TkmLightGrey);
+        }
+      }
+    }
+
+    .date {
+      width: 137px;
+    }
+  }
+}
