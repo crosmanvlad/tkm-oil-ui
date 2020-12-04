@@ -1,0 +1,46 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-my-collections {
+  width: 100%;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color: color(GenericColors, TkmGrey)
+  }
+
+  .table-container {
+    width: 90%;
+    margin: 0 40px;
+    max-height: 450px;
+
+    .table-head {
+      th {
+        background-color: color(GenericColors, TkmGreen);
+      }
+    }
+
+    .table-body {
+      tr:nth-of-type(odd) {
+        background-color: color(GenericColors, TkmLightGrey);
+      }
+    }
+
+    .date {
+      width: 137px;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    .title {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .table-container {
+      margin: 0 20px;
+    }
+  }
+}

@@ -100,4 +100,26 @@
       width: 137px;
     }
   }
+
+  @media (max-width: $bp-mobile) {
+    .filters {
+      margin: 0 20px;
+      flex-direction: column;
+
+      .filter {
+        margin-bottom: 5px;
+      }
+
+      .buttons, .inputs {
+        margin-bottom: 10px;
+      }
+    }
+    .title {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .table-container {
+      margin: 0 20px;
+    }
+  }
 }

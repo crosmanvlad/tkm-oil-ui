@@ -6,6 +6,7 @@ import LogoutService from './LogoutService';
 const URL_REQUEST_COLLECTION = `${process.env.BASE_URL}${process.env.COLLECTION_ENDPOINT}`;
 const URL_REQUEST_COLLECTIONS = `${process.env.BASE_URL}${process.env.COLLECTIONS_ENDPOINT}`;
 const URL_REQUEST_EXPORT = `${process.env.BASE_URL}${process.env.EXPORT_ENDPOINT}`;
+const URL_REQUEST_MY_COLLECTIONS = `${process.env.BASE_URL}${process.env.MY_COLLECTIONS_ENDPOINT}`;
 
 const addCollection = (firm, location, anexaNum, quantity, date) => {
   return axios
@@ -123,12 +124,31 @@ const exportCollection = (query, from, to) => {
     });
 };
 
+const getMyCollections = () => {
+  return axios
+    .get(URL_REQUEST_MY_COLLECTIONS, {
+      headers: {
+        'x-access-token': getCookie(TOKEN)
+      }
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      if (err.response.status === 401) {
+        LogoutService.logout();
+      }
+      return false;
+    });
+};
+
 const CollectionService = {
   addCollection,
   getCollections,
   deleteCollection,
   updateCollection,
-  exportCollection
+  exportCollection,
+  getMyCollections
 };
 
 export default CollectionService;
