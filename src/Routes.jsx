@@ -23,7 +23,7 @@ const Routes = () => {
     if (getCookie(ROLE) === ADMIN) {
       return <Overview />;
     }
-    return <Redirect to="/my-collections" />;
+    return <Redirect to="/new-collection" />;
   };
 
   return (
