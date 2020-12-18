@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot --mode development --port 8081 --host 172.31.34.27",
+    "start": "cross-env NODE_ENV=production webpack-dev-server --open --hot --mode production --port 8081 --host 172.31.34.27",
+    "start-dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --mode development --port 8081",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "test": "jest --silent --coverage",
     "format": "prettier . --ext .js,.jsx,.ts,.tsx --write",

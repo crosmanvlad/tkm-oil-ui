@@ -1,0 +1,37 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-new-user {
+  width: 100%;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color: color(GenericColors, TkmGrey)
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input {
+      margin-bottom: 20px;
+      width: 250px;
+
+      .background-label {
+        background-color: color(GenericColors, TkmWhite);
+        padding: 0 4px;
+      }
+    }
+
+    .submit-button {
+      width: 250px;
+      height: 56px;
+      background-color: color(GenericColors, TkmGreen);
+      color: color(GenericColors, TkmWhite);
+    }
+  }
+}

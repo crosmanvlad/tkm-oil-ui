@@ -35,6 +35,16 @@ const Menu = ({ toggleMenu, showMenu }) => {
           <Link onClick={toggleMenu} to="/new-collection">
             Adauga Colectare
           </Link>
+          {isAdmin && (
+            <Link onClick={toggleMenu} to="/users">
+              Utilizatori
+            </Link>
+          )}
+          {isAdmin && (
+            <Link onClick={toggleMenu} to="/new-user">
+              Adauga Utilizator
+            </Link>
+          )}
         </div>
       )}
     </>

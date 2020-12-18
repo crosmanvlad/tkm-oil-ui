@@ -1,0 +1,14 @@
+@import '../../styles/Styles.scss';
+
+.tkm-oil-user {
+  width: 100%;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color: color(GenericColors, TkmGrey)
+  }
+}
