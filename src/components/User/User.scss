@@ -11,4 +11,147 @@
     margin-top: 20px;
     color: color(GenericColors, TkmGrey)
   }
+
+  .content {
+    padding-left: 30px;
+    display: flex;
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+
+        .input {
+          margin-right: 45px;
+          margin-bottom: 45px;
+          width: 200px;
+
+          .background-label {
+            background-color: color(GenericColors, TkmWhite);
+            padding: 0 4px;
+          }
+        }
+
+        .button {
+          margin-top: -10px;
+          height: 50px;
+        }
+
+        .submit-button {
+          background-color: color(GenericColors, TkmGreen);
+          color: color(GenericColors, TkmWhite);
+        }
+      }
+    }
+
+    .quantity {
+      .date {
+        margin-right: 45px;
+        margin-bottom: 30px;
+        width: 200px;
+      }
+
+      .input {
+        margin-right: 45px;
+        margin-bottom: 45px;
+        width: 200px;
+        height: 50px;
+      }
+
+      .calc-button {
+        background-color: color(GenericColors, TkmGreen);
+        color: color(GenericColors, TkmWhite);
+      }
+
+      .values {
+        display: flex;
+
+        .total-quantity {
+          width: 200px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: color(GenericColors, TkmGreen);
+          font-weight: bold;
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    .change-password {
+
+      .input {
+        margin-right: 45px;
+        margin-bottom: 45px;
+        width: 200px;
+        height: 50px;
+      }
+
+      .button {
+        margin-top: -10px;
+        height: 50px;
+      }
+
+      .submit-button {
+        background-color: color(GenericColors, TkmGreen);
+        color: color(GenericColors, TkmWhite);
+      }
+    }
+
+    .delete-account {
+
+      .confirmation-text {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        font-size: 1.3rem;
+        max-width: 425px;
+        font-weight: bold;
+      }
+
+      .input {
+        margin-right: 45px;
+        margin-bottom: 45px;
+        width: 200px;
+        height: 50px;
+      }
+
+      .delete-button, .confirm-delete-button {
+        background-color: color(GenericColors, TkmRed);
+        color: color(GenericColors, TkmWhite);
+        margin-right: 45px;
+        margin-bottom: 45px;
+        width: 200px;
+        height: 50px;
+      }
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    width: fit-content;
+
+    .content {
+      flex-direction: column;
+
+      .profile {
+
+        .row {
+          flex-direction: column;
+
+          .input {
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      .quantity {
+        padding-bottom: 50px;
+        .values {
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }

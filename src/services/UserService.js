@@ -6,6 +6,7 @@ import LogoutService from './LogoutService';
 const URL_REQUEST_USERS = `${process.env.BASE_URL}${process.env.USERS_ENDPOINT}`;
 const URL_REQUEST_USER = `${process.env.BASE_URL}${process.env.USER_ENDPOINT}`;
 const URL_REQUEST_SIGNUP = `${process.env.BASE_URL}${process.env.SIGNUP_ENDPOINT}`;
+const URL_REQUEST_STATS = `${process.env.BASE_URL}${process.env.STATS_ENDPOINT}`;
 
 const getUsers = () => {
   return axios
@@ -33,7 +34,7 @@ const getUser = (userId) => {
       }
     })
     .then((response) => {
-      return response.data;
+      return response.data.data;
     })
     .catch((err) => {
       if (err.response.status === 401) {
@@ -88,7 +89,7 @@ const updateUser = (userId, email, firstName, lastName, role) => {
       }
     )
     .then((response) => {
-      return response.data;
+      return response.data.data;
     })
     .catch((err) => {
       if (err.response.status === 401) {
@@ -140,13 +141,32 @@ const deleteUser = (userId) => {
     });
 };
 
+const getUserStats = (userId, start, end) => {
+  return axios
+    .get(`${URL_REQUEST_STATS}/${userId}?start=${start}&end=${end}`, {
+      headers: {
+        'x-access-token': getCookie(TOKEN)
+      }
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      if (err.response.status === 401) {
+        LogoutService.logout();
+      }
+      return false;
+    });
+};
+
 const CollectionService = {
   getUsers,
   getUser,
   createUser,
   deleteUser,
   updateUser,
-  updateUserPass
+  updateUserPass,
+  getUserStats
 };
 
 export default CollectionService;
